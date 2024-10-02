@@ -4,6 +4,7 @@ import Header from './components/Header';
 import ResumeForm from './components/ResumeForm';
 import Preview from './components/Preview';
 import './App.css';
+import TempCompo1 from './components/templates/TempCompo1';
 
 const App = () => {
   const [resumeData, setResumeData] = useState({
@@ -27,6 +28,7 @@ const App = () => {
           <ResumeForm resumeData={resumeData} updateResumeData={updateResumeData} />
           <Preview resumeData={resumeData} />
         </Flex>
+         <TempCompo1></TempCompo1>
       </Container>
     </ChakraProvider>
   );
