@@ -1,0 +1,21 @@
+.container{
+    background-color: darkgreen;
+    /* height: 500px; */
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.left{
+width: 30%;
+margin-left: 5%;
+border: 1px solid white;
+margin-top: 10px;
+}
+.right{
+    width: 60%;
+    margin-right: 5%;
+    border: 1px solid white;
+    margin-top: 10px;
+
+}
