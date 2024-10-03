@@ -6,7 +6,10 @@ import EducationComp from './EducationComp'
 import TechnicalSkillsComp from './TechnicalSkillsComp'
 import SoftSkillsComp from './SoftSkillsComp'
 import CertificationComp from './CertificationComp'
-
+import NameCompo from './NameCompo'
+import ProjectCompo from './ProjectCompo'
+import ProfessionalSum from './ProfessionalSum'
+import Experience from './Experience'
 const tempCompo1 = () => {
   return (
       <>
@@ -21,7 +24,10 @@ const tempCompo1 = () => {
                   <CertificationComp/>
              </div>
               <div className='right'>
-                  
+                  <NameCompo/>
+                  <ProfessionalSum/>
+                  <Experience/>
+                  <ProjectCompo/>
              </div>
           </div>
       
