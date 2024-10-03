@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, FormLabel, Input, Textarea, Heading, VStack } from '@chakra-ui/react';
+import './ResumeForm.css';
 
 const ResumeForm = ({ resumeData, updateResumeData }) => {
   const [personalInfo, setPersonalInfo] = useState(resumeData.personalInfo);

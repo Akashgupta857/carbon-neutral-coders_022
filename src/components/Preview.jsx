@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Heading, Text, Stack, Divider, List, ListItem, Badge, Icon } from '@chakra-ui/react';
+import { Box, Heading, Text, Stack, Divider, List, ListItem, Badge, Icon, Button } from '@chakra-ui/react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const Preview = ({ resumeData }) => {
+const Preview = ({ resumeData , generateresume}) => {
   const { personalInfo, education, experience, technicalSkills, softSkills, projects } = resumeData;
 
   return (
@@ -17,6 +17,7 @@ const Preview = ({ resumeData }) => {
       bg="white"
       maxW="container.xl" // Set max width to a container size
     >
+      <Button colorScheme='blue' onClick={generateresume}>Generate Resume</Button>
       <Stack spacing={5}>
         {/* Personal Info Section */}
         <Stack spacing={1}>

@@ -1,35 +1,17 @@
-import React, { useState } from 'react';
-import { ChakraProvider, Container, Flex } from '@chakra-ui/react';
-import Header from './components/Header';
-import ResumeForm from './components/ResumeForm';
-import Preview from './components/Preview';
-import './App.css';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'; 
+import Resumebuilding from './components/Resumebuilding';
+import HomePageroute from './components/HomePageroute';
+import TempCompo1 from "./components/templates/TempCompo1"
 const App = () => {
-  const [resumeData, setResumeData] = useState({
-    personalInfo: { name: '', email: '', phone: '', linkedIn: '', github: '' },
-    education: [],
-    experience: [],
-    technicalSkills: [],
-    softSkills: [],
-    projects: [],
-  });
-
-  const updateResumeData = (section, data) => {
-    setResumeData((prevData) => ({ ...prevData, [section]: data }));
-  };
-
-  return (
-    <ChakraProvider>
-      <Container maxW="container" p={5}>
-        <Header />
-        <Flex mt={5} justifyContent="space-between">
-          <ResumeForm resumeData={resumeData} updateResumeData={updateResumeData} />
-          <Preview resumeData={resumeData} />
-        </Flex>
-      </Container>
-    </ChakraProvider>
-  );
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePageroute/>}/>
+        <Route path="/resumebuilding" element={<Resumebuilding/>}/>
+        <Route path="template" element={<TempCompo1/>}/>
+      </Routes>
+    </BrowserRouter>
+  )
 };
 
 export default App;
