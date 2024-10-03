@@ -1,0 +1,18 @@
+.imgcontainer {
+    position: relative;
+    display: inline-block;
+    margin:auto;
+   
+  }
+  
+
+  
+  .crossbutton {
+   border: 1px solid black;
+    display: none;
+  }
+  
+  .imgcontainer:hover .crossbutton {
+    display: block; 
+}
+  
