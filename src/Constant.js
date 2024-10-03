@@ -1,0 +1,1 @@
+const firbaseurl = "https://resumebuilder-3edd6-default-rtdb.firebaseio.com"
