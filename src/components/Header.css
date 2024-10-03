@@ -1,0 +1,22 @@
+/* Keyframe for fade-in and slide-up animation */
+@keyframes fadeInSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px); /* Start slightly below */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End at the normal position */
+    }
+  }
+  
+  /* Apply animation to the text */
+  .text-animation {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeInSlideUp 1.5s ease-in-out; /* Animation duration of 1.5s */
+  }
+  

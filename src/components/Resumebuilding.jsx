@@ -5,6 +5,7 @@ import ResumeForm from "./ResumeForm";
 import Preview from "./Preview";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './Resumebuilding.css';
 
 const Resumebuilding = () => {
   const [resumeData, setResumeData] = useState({

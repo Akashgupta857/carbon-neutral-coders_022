@@ -1,0 +1,60 @@
+/* Resumebuilding.css */
+.container {
+    padding: 20px;
+    background-color: #f1f1f1;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Styling for buttons */
+button {
+    background-color: #3182ce; /* Default button background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  button:hover {
+    background-color: #2b6cb0; /* Darker shade on hover */
+  }
+  
+  /* Styling for inputs */
+  input, textarea {
+    padding: 8px;
+    width: 100%;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:hover, textarea:hover {
+    border-color: #3182ce; /* Border color change on hover */
+  }
+  
+  /* Additional hover effects on other elements can be added similarly */
+  /* Text animation */
+@keyframes fadeInSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px); /* Starting from below */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Ending at original position */
+    }
+  }
+  
+  .text-animation {
+    font-size: 2.5rem; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #2b6cb0;
+    animation: fadeInSlideUp 2s ease-in-out; /* 2 seconds animation */
+    text-align: center; /* Centering the text */
+    margin-top: 20px;
+  }
+  
