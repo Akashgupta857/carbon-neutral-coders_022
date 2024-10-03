@@ -1,11 +1,8 @@
+import ELearningSection, { FeaturedLogos, SectionOne, ResumePreview, TrustpilotSection, ResumeTemplatesSection, BuildResumeSection, HeaderHome, WhyUseNovoresume, PremiumFeatures, TrustpilotReviews, FaqSection } from './HomePage'
+import '../assets/HomePage.css';
 
-
-import ELearningSection, { FeaturedLogos, SectionOne, ResumePreview, TrustpilotSection, ResumeTemplatesSection, BuildResumeSection, HeaderHome, WhyUseNovoresume, PremiumFeatures, TrustpilotReviews, FaqSection } from './components/HomePage'
-import './assets/homepage.css';
-
-function App() {
+function HomePageroute() {
  
-
   return (
     <div className="App">
     <HeaderHome>
@@ -28,4 +25,4 @@ function App() {
   )
 }
 
-export default App
+export default HomePageroute
