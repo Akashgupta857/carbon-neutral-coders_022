@@ -1,10 +1,12 @@
 import ELearningSection, { FeaturedLogos, SectionOne, ResumePreview, TrustpilotSection, ResumeTemplatesSection, BuildResumeSection, HeaderHome, WhyUseNovoresume, PremiumFeatures, TrustpilotReviews, FaqSection } from './HomePage'
 import '../assets/HomePage.css';
-
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 function HomePageroute() {
  
   return (
     <div className="App">
+    <Navbar/>
     <HeaderHome>
     <ResumePreview/>
     </HeaderHome>
@@ -19,7 +21,7 @@ function HomePageroute() {
     <PremiumFeatures/>
     <TrustpilotReviews/>
     <FaqSection/>
- 
+    <Footer/>
     </div>
 
   )

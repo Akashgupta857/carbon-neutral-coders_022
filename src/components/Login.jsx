@@ -12,7 +12,8 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const data = await signInWithEmailAndPassword(auth, email, password);
+      console.log(data);
       setEmail('');
       setPassword('');
       navigate('/'); // Redirect to Home after successful login

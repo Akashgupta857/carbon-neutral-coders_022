@@ -22,12 +22,13 @@ const Register = () => {
 
             // Save additional user information in the Realtime Database
             const db = getDatabase();
-            await set(ref(db, 'users/' + user.uid), {
+            const data = await set(ref(db, 'users/' + user.uid), {
                 firstName: firstName,
                 lastName: lastName,
                 email: email
             });
-
+            console.log(data);
+            
             // Show success message
             alert("Registration Successful! You have registered successfully.");
 
