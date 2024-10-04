@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Box,
   Flex,
@@ -10,9 +10,16 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { auth } from '../firebase'; // Ensure this import points to your firebase configuration
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate(); // Use useNavigate for navigation
+
+  const handleLogout = async () => {
+    await auth.signOut();
+    navigate('/'); // Redirect to home after logout
+  };
 
   return (
     <Box
@@ -34,41 +41,70 @@ const Navbar = () => {
           onClick={isOpen ? onClose : onOpen}
         />
 
-        {/* Brand */}
-        <Box fontWeight="bold" fontSize="xl">
+        {/* Brand: Centered on Small Screens */}
+        <Box
+          fontWeight="bold"
+          fontSize="xl"
+          textAlign={{ base: 'center', md: 'left' }} // Center text on small screens
+          flex="1" // Allow the brand to take available space
+        >
           <Link to="/">Resume Builder</Link>
         </Box>
 
         {/* Links for Desktop View */}
         <HStack spacing={8} alignItems="center" display={{ base: 'none', md: 'flex' }}>
-          <Link to="/resumebuilding">Resume Templates</Link>
-          <Link to="/resumebuilding">CV Templates</Link>
-          <Link to="/resumebuilding">Cover Letters</Link>
-          <Link to="/resumebuilding">Career Blog</Link>
+          <Link to="/resume-templates">Resume Templates</Link>
+          <Link to="/cv-templates">CV Templates</Link>
+          <Link to="/cover-letters">Cover Letters</Link>
+          <Link to="/career-blog">Career Blog</Link>
+          {user ? (
+            <>
+              <Link to="/dashboard">
+                <Button colorScheme="teal" size="md">Dashboard</Button>
+              </Link>
+              <Button colorScheme="teal" size="md" onClick={handleLogout}>Logout</Button>
+            </>
+          ) : (
+            <Flex alignItems="center">
+              <Link to="/register">
+                <Button colorScheme="teal" size="md" mr={2}>Register</Button>
+              </Link>
+              <Link to="/login">
+                <Button colorScheme="teal" size="md">Login</Button>
+              </Link>
+            </Flex>
+          )}
         </HStack>
-
-        {/* Login/Signup Button */}
-        <Flex alignItems="center">
-          <Link to="/register">
-            <Button colorScheme="teal" size="md" mr={2}>Register</Button>
-          </Link>
-          <Link to="/login">
-            <Button colorScheme="teal" size="md">Login</Button>
-          </Link>
-        </Flex>
       </Flex>
 
       {/* Hamburger Menu Links */}
-      {isOpen ? (
-        <Box pb={4} display={{ md: 'none' }}>
+      {isOpen && (
+        <Box pb={4} display={{ md: 'none' }} bg="blue.700" borderRadius="md">
           <Stack as="nav" spacing={4}>
             <Link to="/resume-templates" onClick={onClose}>Resume Templates</Link>
             <Link to="/cv-templates" onClick={onClose}>CV Templates</Link>
             <Link to="/cover-letters" onClick={onClose}>Cover Letters</Link>
             <Link to="/career-blog" onClick={onClose}>Career Blog</Link>
+            {user ? (
+              <>
+                <Link to="/dashboard" onClick={onClose}>
+                  <Button colorScheme="teal" size="md">Dashboard</Button>
+                </Link>
+                <Button colorScheme="teal" size="md" onClick={handleLogout}>Logout</Button>
+              </>
+            ) : (
+              <HStack spacing={4}>
+                <Link to="/register" onClick={onClose}>
+                  <Button colorScheme="teal" size="md">Register</Button>
+                </Link>
+                <Link to="/login" onClick={onClose}>
+                  <Button colorScheme="teal" size="md">Login</Button>
+                </Link>
+              </HStack>
+            )}
           </Stack>
         </Box>
-      ) : null}
+      )}
     </Box>
   );
 };

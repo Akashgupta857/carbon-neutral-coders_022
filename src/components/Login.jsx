@@ -1,65 +1,44 @@
 import React, { useState } from 'react';
-import { auth } from '../firebase'; // Adjust the import based on your project structure
+import { useNavigate, Link } from 'react-router-dom';
+import { Box, Button, FormControl, FormLabel, Input, Heading, Text } from '@chakra-ui/react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Box, Button, Input, FormLabel, Heading, VStack } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+import { auth } from '../firebase';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const data = await signInWithEmailAndPassword(auth, email, password);
-      console.log(data);
-      setEmail('');
-      setPassword('');
-      navigate('/'); // Redirect to Home after successful login
-    } catch (error) {
-      alert(`Error during login: ${error.message}`);
-    }
-  };
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            alert("Login Successful!");
+            navigate('/'); // Redirect to home after successful login
+        } catch (error) {
+            alert("Login Failed. " + error.message);
+        }
+    };
 
-  return (
-    <Box
-      maxWidth="400px"
-      mx="auto"
-      mt="100px"
-      p={4}
-      borderWidth={1}
-      borderRadius="md"
-      boxShadow="md"
-    >
-      <Heading as="h2" size="lg" textAlign="center" mb={4}>
-        Login
-      </Heading>
-      <form onSubmit={handleLogin}>
-        <VStack spacing={4} align="stretch">
-          <FormLabel>Email:</FormLabel>
-          <Input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="Enter your email"
-          />
-          <FormLabel>Password:</FormLabel>
-          <Input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder="Enter your password"
-          />
-          <Button type="submit" colorScheme="teal" mt={4}>
-            Login
-          </Button>
-        </VStack>
-      </form>
-    </Box>
-  );
+    return (
+        <Box maxW="md" mx="auto" mt={8} p={6} borderWidth={1} borderRadius={8}>
+            <Heading mb={4}>Login</Heading>
+            <form onSubmit={handleLogin}>
+                <FormControl mb={4}>
+                    <FormLabel>Email</FormLabel>
+                    <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                </FormControl>
+                <FormControl mb={4}>
+                    <FormLabel>Password</FormLabel>
+                    <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                </FormControl>
+                <Button colorScheme="teal" type="submit" width="full">Login</Button>
+            </form>
+            <Text mt={4}>
+                Don't have an account? <Link to="/register">Register</Link>
+            </Text>
+        </Box>
+    );
 };
 
 export default Login;

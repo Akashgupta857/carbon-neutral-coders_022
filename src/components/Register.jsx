@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Box, Button, FormControl, FormLabel, Input, Heading, Text } from '@chakra-ui/react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { getDatabase, ref, set } from 'firebase/database';
-import { auth } from '../firebase'; // Adjust the import according to your Firebase config
+import { auth } from '../firebase';
 
 const Register = () => {
     const [firstName, setFirstName] = useState('');
@@ -14,34 +14,21 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-
         try {
-            // Create user with email and password
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user; // Get the created user
+            const user = userCredential.user;
 
-            // Save additional user information in the Realtime Database
             const db = getDatabase();
-            const data = await set(ref(db, 'users/' + user.uid), {
-                firstName: firstName,
-                lastName: lastName,
-                email: email
+            await set(ref(db, 'users/' + user.uid), {
+                firstName,
+                lastName,
+                email
             });
-            console.log(data);
-            
-            // Show success message
-            alert("Registration Successful! You have registered successfully.");
 
-            // Redirect to login page after successful registration
-            navigate('/login');
+            alert("Registration Successful!");
+            navigate('/login'); // Redirect to login after registration
         } catch (error) {
-            // Check for specific error codes and respond accordingly
-            if (error.code === 'auth/email-already-in-use') {
-                alert("Email already in use. This email address is already registered. Please try another one.");
-            } else {
-                alert("Registration Failed. An error occurred during registration. Please try again.");
-                console.error("Error during registration: ", error);
-            }
+            alert("Registration Failed. " + error.message);
         }
     };
 
