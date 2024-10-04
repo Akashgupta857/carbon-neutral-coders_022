@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'; 
 import Resumebuilding from './components/Resumebuilding';
 import HomePageroute from './components/HomePageroute';
-import TempCompo1 from "./components/templates/TempCompo1"
+import TempCompo1 from "./components/templates/TempCompo1";
 const App = () => {
   return(
     <BrowserRouter>
