@@ -55,19 +55,26 @@ const Navbar = ({ user }) => {
         <HStack spacing={8} alignItems="center" display={{ base: 'none', md: 'flex' }}>
           <Link to="/resumebuilding">Resume Templates</Link>
           <Link to="/resumebuilding">CV Templates</Link>
-          <Link to="/resumebuilding">Cover Letters</Link>
-          <Link to="/resumebuilding">Career Blog</Link>
+          <Link to="/careerblog">Career Blog</Link>
+          <Link to="/pricing">Pricing</Link>
+          {user ? (
+            <>
+              <Link to="/dashboard">
+                <Button colorScheme="teal" size="md">Dashboard</Button>
+              </Link>
+              <Button colorScheme="teal" size="md" onClick={handleLogout}>Logout</Button>
+            </>
+          ) : (
+            <Flex alignItems="center">
+              <Link to="/register">
+                <Button colorScheme="teal" size="md" mr={2}>Register</Button>
+              </Link>
+              <Link to="/login">
+                <Button colorScheme="teal" size="md">Login</Button>
+              </Link>
+            </Flex>
+          )}
         </HStack>
-
-        {/* Login/Signup Button */}
-        <Flex alignItems="center">
-          <Link to="/register">
-            <Button colorScheme="teal" size="md" mr={2}>Register</Button>
-          </Link>
-          <Link to="/login">
-            <Button colorScheme="teal" size="md">Login</Button>
-          </Link>
-        </Flex>
       </Flex>
 
       {/* Hamburger Menu Links */}
@@ -78,6 +85,23 @@ const Navbar = ({ user }) => {
             <Link to="/cv-templates" onClick={onClose}>CV Templates</Link>
             <Link to="/cover-letters" onClick={onClose}>Cover Letters</Link>
             <Link to="/career-blog" onClick={onClose}>Career Blog</Link>
+            {user ? (
+              <>
+                <Link to="/dashboard" onClick={onClose}>
+                  <Button colorScheme="teal" size="md">Dashboard</Button>
+                </Link>
+                <Button colorScheme="teal" size="md" onClick={handleLogout}>Logout</Button>
+              </>
+            ) : (
+              <HStack spacing={4}>
+                <Link to="/register" onClick={onClose}>
+                  <Button colorScheme="teal" size="md">Register</Button>
+                </Link>
+                <Link to="/login" onClick={onClose}>
+                  <Button colorScheme="teal" size="md">Login</Button>
+                </Link>
+              </HStack>
+            )}
           </Stack>
         </Box>
       )}
