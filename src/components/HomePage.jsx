@@ -115,7 +115,6 @@ export const TrustpilotSection = () => {
 export const ResumeTemplatesSection = () => (
   <section className="resume-templates" data-aos="zoom-in">
     <h2>Resume Templates for Every Career Path</h2>
-    <p>... some content</p>
     <div className="templates-grid">
       <div className="template-item" data-aos="fade-up">
         <img src="https://d25zcttzf44i59.cloudfront.net/official-resume-template.png" alt="Template 1" />

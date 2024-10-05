@@ -43,8 +43,8 @@ const Navbar = () => {
         <HStack spacing={8} alignItems="center" display={{ base: 'none', md: 'flex' }}>
           <Link to="/resumebuilding">Resume Templates</Link>
           <Link to="/resumebuilding">CV Templates</Link>
-          <Link to="/resumebuilding">Cover Letters</Link>
-          <Link to="/resumebuilding">Career Blog</Link>
+          <Link to="/careerblog">Career Blog</Link>
+          <Link to="/pricing">Pricing</Link>
         </HStack>
 
         {/* Login/Signup Button */}
@@ -64,8 +64,8 @@ const Navbar = () => {
           <Stack as="nav" spacing={4}>
             <Link to="/resume-templates" onClick={onClose}>Resume Templates</Link>
             <Link to="/cv-templates" onClick={onClose}>CV Templates</Link>
-            <Link to="/cover-letters" onClick={onClose}>Cover Letters</Link>
-            <Link to="/career-blog" onClick={onClose}>Career Blog</Link>
+            <Link to="/cover-letters" onClick={onClose}>Career Blog</Link>
+            <Link to="/career-blog" onClick={onClose}>Pricing</Link>
           </Stack>
         </Box>
       ) : null}

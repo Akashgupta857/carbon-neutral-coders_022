@@ -4,6 +4,8 @@ import HomePageroute from './components/HomePageroute';
 import TempCompo1 from "./components/templates/TempCompo1";
 import Login from "./components/Login"
 import Register from "./components/Register"
+import Pricing from './components/Price';
+import ArticlesGrid from './components/CareerBlog';
 const App = () => {
   return(
     <BrowserRouter>
@@ -13,6 +15,9 @@ const App = () => {
         <Route path="/register" element={<Register/>}/>
         <Route path="/resumebuilding" element={<Resumebuilding/>}/>
         <Route path="template" element={<TempCompo1/>}/>
+        <Route path="/careerblog" element={<ArticlesGrid/>}/>
+        <Route path="/pricing" element={<Pricing/>}/>
+
 
       </Routes>
     </BrowserRouter>

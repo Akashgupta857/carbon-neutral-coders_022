@@ -54,8 +54,8 @@ body {
 
 /* Resume preview section */
 .resume-preview {
-    max-width: 45%;
-    margin-left: 40px;
+    max-width: 60%; /* Increase the width to 60% */
+    margin: 0 auto; /* Center the resume preview container */
 }
 
 .resume-img {
@@ -72,6 +72,7 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+
 /* Featured section */
 .featured {
     background-color: #72d6ef;
@@ -84,6 +85,13 @@ body {
     margin-bottom: 30px;
 }
 
+/* Logo grid styling */
+.logo-grid {
+    display: flex; /* Use flexbox to arrange logos in a line */
+    justify-content: center; /* Center logos horizontally */
+    flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+}
+
 .logo-grid img {
     max-width: 130px;
     margin: 20px;
@@ -94,6 +102,7 @@ body {
     transform: translateY(-8px);
     opacity: 0.9;
 }
+
 
 /* Section one */
 .section-one {
