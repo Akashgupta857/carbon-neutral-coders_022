@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import './tempCompo1.css';
-import TempCompo2 from './TempCompo2';
-import TempCompo3 from './tempCompo3';
-import TempCompo4 from './TempoCompo4';
+import './tempcompo4.css';
 import PhotoComp from './PhotoComp';
 import ContactDetailsComp from './ContactDetailsComp';
 import EducationComp from './EducationComp';
@@ -14,11 +11,13 @@ import ProjectCompo from './ProjectCompo';
 import ProfessionalSum from './ProfessionalSum';
 import Experience from './Experience';
 import { useRef } from 'react'
-import { Button } from '@chakra-ui/react';
+import { border, Button } from '@chakra-ui/react';
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+// import { textAlign } from 'html2canvas/dist/types/css/property-descriptors/text-align';
+// import { display } from 'html2canvas/dist/types/css/property-descriptors/display';
 
-const TempCompo1 = () => {
+const TempCompo4 = () => {
   const [bgColor, setBgColor] = useState('#2e8b57'); // background color
   const [leftColor, setLeftColor] = useState('#3c9d77'); // left section color
   const [rightColor, setRightColor] = useState('#fff'); // right section color
@@ -51,39 +50,25 @@ const TempCompo1 = () => {
      <Button colorScheme="teal" size="md" onClick={downloadResume}>Download Resume</Button>
      <br />
      <div ref={resumeRef}> 
-      <div className="container" style={{ backgroundColor: bgColor }}>
-        {isLeftFirst ? (<>
-          <div className="left" style={{ backgroundColor: leftColor }}>
-          <PhotoComp />
-          <ContactDetailsComp />
-          <EducationComp />
-          <TechnicalSkillsComp />
-          <SoftSkillsComp />
-          <CertificationComp />
-        </div>
-        <div className="right" style={{ backgroundColor: rightColor }}>
-          <NameCompo />
-          <ProfessionalSum />
-          <Experience />
-          <ProjectCompo />
-        </div>
-        </>):<>
-        <div className="right" style={{ backgroundColor: rightColor }}>
-          <NameCompo />
-          <ProfessionalSum />
-          <Experience />
-          <ProjectCompo />
-        </div>
+     
 
-        <div className="left" style={{ backgroundColor: leftColor }}>
-          <PhotoComp />
-          <ContactDetailsComp />
-          <EducationComp />
-          <TechnicalSkillsComp />
+      <div className="container4" style={{ backgroundColor: bgColor }}>
+        <div className="photo4" style={{textAlign:"centre"}}>
+        
+        <NameCompo />
+        <div className="text">
+        <ContactDetailsComp  />
+        </div>
+        
+        </div>
+        <ProfessionalSum />
+        <Experience />
+        <EducationComp />
+        <ProjectCompo />
+        <TechnicalSkillsComp />
           <SoftSkillsComp />
           <CertificationComp />
-        </div>
-        </>}
+      
        
       </div>
       </div>
@@ -96,31 +81,14 @@ const TempCompo1 = () => {
             onChange={(e) => setBgColor(e.target.value)}
           />
         </div>
-        <div>
-          <label>Left Section Color: </label>
-          <input
-            type="color"
-            value={leftColor}
-            onChange={(e) => setLeftColor(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Right Section Color: </label>
-          <input
-            type="color"
-            value={rightColor}
-            onChange={(e) => setRightColor(e.target.value)}
-          />
-        </div>
+        
+        
         <Button colorScheme="teal" size="md" onClick={toggleOrder}>
           {isLeftFirst ? 'Move Left to Right' : 'Move Right to Left'}
         </Button>
       </div>
-      <TempCompo2/>
-      <TempCompo3/>
-      <TempCompo4/>
     </>
   );
 };
 
-export default TempCompo1;
+export default TempCompo4;
