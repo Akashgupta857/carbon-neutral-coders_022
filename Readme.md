@@ -8,13 +8,13 @@ Project Type
 Fullstack
 
 Deplolyed App
-Fullstack: (https://thinkspacewhiteboard.netlify.app/)
+Fullstack: ()
 
 Directory Structure
 my-app/ ├─ backend/ │ ├─ (firebase authentication link directly in login and signup page) ├─ frontend/ │ ├─ index.html │ ├─ login.html │ ├─ signup.html │ ├─ styles/ │ │ ├─ styles.css │ ├─ scripts/ │ │ ├─ firebase-config.js │ │ ├─ script.js
 
 Video Walkthrough of the project
-(https://youtu.be/vcrFkQbdzVQ)
+()
 
 Features
 List out the key features of your application.
