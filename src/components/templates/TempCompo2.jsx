@@ -55,7 +55,10 @@ const TempCompo2 = () => {
       <div className="container2" style={{ backgroundColor: bgColor }}>
         <div className="photo" style={{textAlign:"centre"}}>
         <PhotoComp />
+        <div style={{fontSize:"30px"}}>
         <NameCompo />
+        </div>
+       
         </div>
    
       <div style={{display:"flex"}}>

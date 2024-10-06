@@ -1,34 +1,15 @@
 .container4 {
-    width: 80%;
+    width: 70%;
     margin: auto;
    display: flex;
    flex-direction: column;
     padding: 20px;
     border-radius: 10px;
+    color: black;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
-.left4 {
-    width: 37%;
-    margin-left: 2%;
-    
-    padding: 20px;
-    color: #ffffff;
-   
-    margin-top: 10px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-}
 
-.right4 {
-    width: 65%;
-    margin-right: 2%;
-    border: 1px solid #fff;
-    padding: 20px;
-    color: #333;
-   
-    margin-top: 10px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-}
 
 .color-pickers {
     text-align: center;
@@ -51,8 +32,4 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
-}
-.text{
-    font-size: 16px;
-    
 }

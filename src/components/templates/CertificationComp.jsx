@@ -3,9 +3,9 @@
 const CertificationComp = () => {
   return (
     <div>
-      <h3>Certifications</h3>
+      <h2>Certifications</h2>
       <hr />
-      <p>Link your certificates here</p>
+      <h6>Link your certificates here</h6>
     </div>
   )
 }

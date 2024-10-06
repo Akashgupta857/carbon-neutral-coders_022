@@ -12,6 +12,8 @@ import axios from 'axios';
 import { auth } from './firebase';
 import Pricing from "./components/Price"
 import ArticlesGrid from './components/CareerBlog';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Alltemplate from './components/Alltemplate';
 const App = () => {
   const [user, setUser] = useState(null);
@@ -41,7 +43,10 @@ const App = () => {
     return () => unsubscribe();
   }, []);
   return(
+   
     <BrowserRouter>
+    <Navbar user={user}/>
+   
       <Routes>
         <Route path="/" element={<HomePageroute/>}/>
         <Route path="/login" element={<Login/>}/>
@@ -53,6 +58,7 @@ const App = () => {
         <Route path="/careerblog" element={<ArticlesGrid/>}/>
         <Route path="/alltemplate" element={<Alltemplate/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 };

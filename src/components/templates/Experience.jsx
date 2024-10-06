@@ -7,11 +7,7 @@ const Experience = () => {
     <div>
         <h2>Experience</h2>
         <hr />
-        {/* <div style={{display:"flex",justifyContent:"space-around"}}>
-            <p>company name</p>
-            <p>Role</p>
-            <p>Date</p>
-        </div> */}
+       
         {data.map(([key,val])=>{
             console.log(val.experience[0],"tt")
             return<div style={{display:"flex",justifyContent:"space-around"}}>

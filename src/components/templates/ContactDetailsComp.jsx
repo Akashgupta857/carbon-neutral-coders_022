@@ -10,7 +10,7 @@ const ContactDetailsComp = () => {
   let {data}=useContext(DataContext)
   return (
     <div>
-      <h3>Contact</h3>
+      <h2>Contact</h2>
         <hr />
           {data.map(([key,val])=>{
             return<>

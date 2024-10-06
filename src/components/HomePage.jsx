@@ -4,6 +4,7 @@ import { useState ,useEffect} from 'react';
 // import './HomePage.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 export const HeaderHome = () => {
   useEffect(() => {
@@ -129,7 +130,10 @@ export const ResumeTemplatesSection = () => (
         <p>Template 3</p>
       </div>
     </div>
+    <Link to='/alltemplate'>
     <button className="btn-primary discover-more-btn" data-aos="fade-in">Discover More Resume Templates</button>
+
+    </Link>
   </section>
 );
 
@@ -225,7 +229,10 @@ export const WhyUseNovoresume = () => {
           <p>See your changes instantly as you edit your resume.</p>
         </div>
       </div>
+      <Link to="/alltemplate">
       <button className="btn-primary try-it-btn" data-aos="fade-up">Try It Out Yourself</button>
+
+      </Link>
     </section>
   );
 };
@@ -295,8 +302,10 @@ export const PremiumFeatures = () => {
           <p>Fit your decade’s worth of experience on multiple pages beyond the one-page limit.</p>
         </div>
       </div>
-
+      <Link to="/pricing">
       <button className="btn-primary" data-aos="fade-up">Check Out Premium</button>
+
+      </Link>
     </section>
   );
 };

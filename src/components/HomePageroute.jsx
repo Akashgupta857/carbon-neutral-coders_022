@@ -17,7 +17,7 @@ function HomePageroute() {
 
   return (
     <div className="App">
-    <Navbar user={user}/>
+    {/* <Navbar user={user}/> */}
     <HeaderHome>
     <ResumePreview/>
     </HeaderHome>
@@ -32,7 +32,7 @@ function HomePageroute() {
     <PremiumFeatures/>
     <TrustpilotReviews/>
     <FaqSection/>
-    <Footer/>
+    {/* <Footer/> */}
     </div>
 
   )

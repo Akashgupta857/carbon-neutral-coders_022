@@ -7,15 +7,15 @@ const EducationComp = () => {
   let {data}=useContext(DataContext)
   return (
     <div>
-          <h3>Education</h3>
+          <h2>Education</h2>
           <hr />
           {data.map(([key,val])=>{
             
             return<>
             
-           <p>{val.education[0].degree}</p>
-           <p>{val.education[0].year}</p>
-           <p>{val.education[0].school}</p>
+           <h6>{val.education[0].degree}</h6>
+           <h6>{val.education[0].year}</h6>
+           <h6>{val.education[0].school}</h6>
          
             </>
           })}

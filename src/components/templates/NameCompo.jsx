@@ -10,11 +10,10 @@ const NameCompo = () => {
         
         {data.map(([key,val])=>{
           return <div>
-            <h1>{val.personalInfo.name
-            }</h1>
+            <h2 style={{fontSize:"25px"}}>{val.personalInfo.name}</h2>
           </div>
         })} 
-        <h1>Frontend Developer</h1>
+        <h2>Frontend Developer</h2>
     </div>
   )
 }

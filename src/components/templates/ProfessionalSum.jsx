@@ -5,7 +5,7 @@ const ProfessionalSum = () => {
     <div>
         <h2>Professional Summary</h2>
         <hr />
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus voluptates illo numquam et. Nesciunt quod sunt quasi debitis totam cumque consectetur asperiores, sed cum nostrum similique tenetur iure accusamus officia.</p>
+        <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus voluptates illo numquam et. Nesciunt quod sunt quasi debitis totam cumque consectetur asperiores, sed cum nostrum similique tenetur iure accusamus officia.</h6>
     </div>
   )
 }
