@@ -12,6 +12,7 @@ import axios from 'axios';
 import { auth } from './firebase';
 import Pricing from "./components/Price"
 import ArticlesGrid from './components/CareerBlog';
+import Alltemplate from './components/Alltemplate';
 const App = () => {
   const [user, setUser] = useState(null);
   const {data,SetData}=useContext(DataContext)
@@ -50,6 +51,7 @@ const App = () => {
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/dashboard" element={user ? <Resumebuilding /> : <Navigate to="/login" />} />
         <Route path="/careerblog" element={<ArticlesGrid/>}/>
+        <Route path="/alltemplate" element={<Alltemplate/>}/>
       </Routes>
     </BrowserRouter>
   )

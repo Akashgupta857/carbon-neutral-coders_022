@@ -53,7 +53,7 @@ const Navbar = ({ user }) => {
 
         {/* Links for Desktop View */}
         <HStack spacing={8} alignItems="center" display={{ base: 'none', md: 'flex' }}>
-          <Link to="/resumebuilding">Resume Templates</Link>
+          <Link to="/alltemplate">Resume Templates</Link>
           <Link to="/resumebuilding">CV Templates</Link>
           <Link to="/careerblog">Career Blog</Link>
           <Link to="/pricing">Pricing</Link>
