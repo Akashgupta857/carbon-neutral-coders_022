@@ -14,7 +14,7 @@ Directory Structure
 my-app/ ├─ backend/ │ ├─ (firebase authentication link directly in login and signup page) ├─ frontend/ │ ├─ index.html │ ├─ login.html │ ├─ signup.html │ ├─ styles/ │ │ ├─ styles.css │ ├─ scripts/ │ │ ├─ firebase-config.js │ │ ├─ script.js
 
 Video Walkthrough of the project
-()
+(https://www.youtube.com/watch?v=kT_86xI9AMw)
 
 Features
 List out the key features of your application.
