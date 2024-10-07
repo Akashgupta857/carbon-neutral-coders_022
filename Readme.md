@@ -24,6 +24,11 @@ Credentials Provide user email and password in Login and SignUp page.
 
 APIs Used Firebase Authentication : ThinkSpace uses Firebase Authentication to manage user authentication for login and sign-up. This API enables secure and scalable user authentication with various sign-in methods.
 
+Project reference image:
+
+![project image](https://github.com/user-attachments/assets/d5cc3113-aebe-4c42-9f09-eb8b3e32ae11)
+
+
 Key Features: Email/Password Authentication: Allows users to create accounts and log in using email and password. User Management: Provides functions for user account creation, password resets, and session management.
 
 Technology Stack List and provide a brief overview of the technologies used in the project.
