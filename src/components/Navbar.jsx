@@ -81,10 +81,10 @@ const Navbar = ({ user }) => {
       {isOpen && (
         <Box pb={4} display={{ md: 'none' }} bg="blue.700" borderRadius="md">
           <Stack as="nav" spacing={4}>
-            <Link to="/resume-templates" onClick={onClose}>Resume Templates</Link>
-            <Link to="/cv-templates" onClick={onClose}>CV Templates</Link>
-            <Link to="/cover-letters" onClick={onClose}>Cover Letters</Link>
-            <Link to="/career-blog" onClick={onClose}>Career Blog</Link>
+            <Link to="/alltemplate" onClick={onClose}>Resume Templates</Link>
+            <Link to="/resumebuilding" onClick={onClose}>CV Templates</Link>
+            <Link to="/careerblog" onClick={onClose}>Career Blog</Link>
+            <Link to="/pricing" onClick={onClose}>Pricing</Link>
             {user ? (
               <>
                 <Link to="/dashboard" onClick={onClose}>
