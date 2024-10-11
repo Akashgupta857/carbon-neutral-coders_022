@@ -4,7 +4,7 @@ Introduction A Resume Builder is a web or mobile application that allows users t
 
 Project Type Fullstack
 
-Deplolyed App Fullstack: (https://6702e693ef9caab567b2ac54--zingy-longma-10b25b.netlify.app/)
+Deplolyed App Fullstack: (https://carbon-neutral-coders-022.netlify.app/)
 
 Directory Structure my-app/ ├─ backend/ │ ├─ (firebase authentication link directly in login and signup page) ├─ frontend/ │ ├─ index.html │ ├─ login.html │ ├─ signup.html │ ├─ styles/ │ │ ├─ styles.css │ ├─ scripts/ │ │ ├─ firebase-config.js │ │ ├─ script.js
 
