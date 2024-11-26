@@ -15,6 +15,7 @@ const Resumebuilding = () => {
     softSkills: [],
     projects: [],
   });
+  
   const navigate = useNavigate()
   const updateResumeData = (section, data) => {
     setResumeData((prevData) => ({ ...prevData, [section]: data }));
@@ -37,19 +38,27 @@ const Resumebuilding = () => {
       return
     }
     console.log(resumeData);
-    axios.delete("https://resumebuilder-3edd6-default-rtdb.firebaseio.com/resumedata.json")
+    // axios.delete("https://resumebuilder-3edd6-default-rtdb.firebaseio.com/resumedata.json")
+    axios.delete('https://resumebuilder-e6450-default-rtdb.asia-southeast1.firebasedatabase.app/resumedata.json')
     .then((val) =>{
-      return axios.post("https://resumebuilder-3edd6-default-rtdb.firebaseio.com/resumedata.json", resumeData)
+      // https://resumebuilder-e6450-default-rtdb.asia-southeast1.firebasedatabase.app/
+      // return axios.post("https://resumebuilder-3edd6-default-rtdb.firebaseio.com/resumedata.json", resumeData)
+      return axios.post("https://resumebuilder-e6450-default-rtdb.asia-southeast1.firebasedatabase.app/resumedata.json", resumeData)
     })
     .then((val) =>{
       console.log(val);
       alert("resume generated")
-      navigate("/template")
+     
+      setTimeout(()=>{
+        navigate("/template")
+      },3000)
+     
     })
     .catch((err) =>{
       console.log(err);
     })
   }
+
   return (
     <ChakraProvider>
       <Container maxW="container" p={5}>
@@ -69,3 +78,4 @@ const Resumebuilding = () => {
 };
 
 export default Resumebuilding;
+
