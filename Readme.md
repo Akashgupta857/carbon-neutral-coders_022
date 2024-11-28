@@ -1,6 +1,7 @@
 Project Title
 
 Introduction A Resume Builder is a web or mobile application that allows users to create professional resumes by entering personal information, work experience, education, skills, and other relevant details. The app usually provides predefined templates and formatting options to help users generate well-structured and visually appealing resumes with ease. The aim is to simplify the resume creation process, even for users with minimal technical skills, while offering customization options to suit individual needs and industry standards.
+- Website Link: https://fluffy-croissant-7dfec2.netlify.app/
 
 Project Type Fullstack
 
